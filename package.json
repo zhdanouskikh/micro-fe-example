@@ -1,0 +1,20 @@
+{
+  "name": "micro-frontend-example",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "https://github.com/rautio/react-micro-frontend-example.git",
+  "author": "Alexandr Zhdanovskikh <alex.zhdanovskikh@gmail.com>",
+  "license": "MIT",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "start": "concurrently --kill-others \"yarn start:remote\" \"yarn start:proxy\" \"yarn start:app-react\" \"yarn start:app-html\"",
+    "start:remote": "yarn workspace remote start",
+    "start:proxy": "yarn workspace proxy start",
+    "start:app-react": "yarn workspace app-react start",
+    "start:app-html": "yarn workspace app-html start",
+    "clean": "yarn workspaces run clean && rm -rf node_modules && yarn cache clean"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}

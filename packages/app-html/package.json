@@ -1,0 +1,12 @@
+{
+  "name": "app-html",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "serve -l 3003 -s public",
+    "cleanup": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "serve": "^14.0.1"
+  }
+}
